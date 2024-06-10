@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Deepratna Awale</h1>
 <h3 align="center">A Generative AI / ML Enthusiast, creating AI solutions for community!</h3>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=deepratnaawale" alt="deepratnaawale" /></a> </p>
+<p align="left" style="padding:10"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=deepratnaawale" alt="deepratnaawale" /></a> </p>
 
 - 🔭 I’m currently working on [Yodayo Chat Customizer](https://github.com/deepratnaawale/Yodayo-Chat-Customizer)
 
@@ -11,7 +11,7 @@
 
 - 👨‍💻 All of my projects are available at [https://github.com/deepratnaawale](https://github.com/deepratnaawale)
 
-- 📝 I regularly write articles on [https://awaledeep.wixsite.com/site/blog](https://awaledeep.wixsite.com/site/blog)
+- 📝 I write articles on [https://awaledeep.wixsite.com/site/blog](https://awaledeep.wixsite.com/site/blog)
 
 - 💬 Ask me about **Stable Diffusion, LLMs, Python, and Generative AI.**
 
