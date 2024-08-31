@@ -1,8 +1,6 @@
 <h1 align="center">Hi 👋, I'm Deepratna Awale</h1>
 <h3 align="center">A Generative AI / ML Enthusiast, creating AI solutions for community!</h3>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=deepratna-awale" alt="deepratna-awale" /></a> </p>
-
 - 🔭 I’m currently working on [Yodayo Chat Customizer](https://github.com/deepratna-awale/Yodayo-Chat-Customizer)
 
 - 🌱 I’m currently learning **Middleware creation using Python and JS**
@@ -31,5 +29,4 @@
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=deepratna-awale&show_icons=true&locale=en&theme=dark&layout=donut-vertical" alt="deepratna-awale" /></p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=deepratna-awale&show_icons=true&locale=en&theme=dark" alt="deepratna-awale" /></p>
 
