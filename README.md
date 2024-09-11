@@ -1,5 +1,6 @@
 <h1 align="center">Hi 👋, I'm Deepratna Awale</h1>
-<h3 align="center">A Generative AI / ML Enthusiast, creating AI solutions for community!</h3>
+<h3 align="center">A Generative AI / ML Enthusiast!</h3>
+<h4 align="center">If AI can make you a 10x engineer, you were a 0.1x engineer to begin with. -Primeagen</h4>
 
 - 🔭 I’m currently working on [Yodayo Chat Customizer](https://github.com/deepratna-awale/Yodayo-Chat-Customizer)
 
