@@ -2,7 +2,7 @@
 <h3 align="center">Generative AI Engineer</h3>
 <h4 align="center">If AI can make you a 10x engineer, you were a 0.1x engineer to begin with. -Primeagen</h4>
 
-- 🌱 I’m currently learning **Career Craft** - A tool to automatically craft resumes, cover letters and apply to LinkedIn and other famous job portals.
+- 🌱 I’m currently learning **Career Craft** - Coming Soon.
 
 - 🤝 I’m looking for help with [AutoExpress](https://github.com/deepratna-awale/AutoExpress)
 
