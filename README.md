@@ -18,10 +18,6 @@
 <a href="https://linkedin.com/in/deepratna-awale" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="deepratna-awale" height="30" width="40" /></a>
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-![image](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![image](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![image](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=deepratna-awale&show_icons=true&locale=en&theme=dark&layout=donut-vertical" alt="deepratna-awale" /></p>
 
 
