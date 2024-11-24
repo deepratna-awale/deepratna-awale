@@ -2,22 +2,16 @@
 <h3 align="center">Generative AI Engineer</h3>
 <h4 align="center">If AI can make you a 10x engineer, you were a 0.1x engineer to begin with. -Primeagen</h4>
 
-- 🌱 I’m currently creating **Career Craft** - Coming Soon.
-
-- 🤝 I’m looking for help with [AutoExpress](https://github.com/deepratna-awale/AutoExpress)
+- 🤝 I’m currently developing and maintaining for help with [AutoExpress](https://github.com/deepratna-awale/AutoExpress)
 
 - 👨‍💻 All of my projects are available at [https://github.com/deepratna-awale](https://github.com/deepratna-awale)
-
-- 📝 I write articles on [https://awaledeep.wixsite.com/site/blog](https://awaledeep.wixsite.com/site/blog)
 
 - 💬 Ask me about **Stable Diffusion, LLMs, Python, and Generative AI.**
 
 - 📫 How to reach me **awale.deep@gmail.com**
 
 - 📄 Know about my experiences [https://awaledeep.wixsite.com/site/resume](https://awaledeep.wixsite.com/site/resume)
-
-- ⚡ Fun fact **I also create websites on wix/webflow/wordpress (even though it's none of my business).**
-
+- 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/deepratna-awale" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="deepratna-awale" height="30" width="40" /></a>
