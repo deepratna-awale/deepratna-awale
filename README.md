@@ -1,8 +1,8 @@
 <h1 align="center">Hi, I'm Deepratna Awale</h1>
-<h3 align="center">Generative AI Engineer</h3>
+<h3 align="center">Gen AI/ ML Engineer</h3>
 <h4 align="center">If AI can make you a 10x engineer, you were a 0.1x engineer to begin with. -Primeagen</h4>
 
-- 🤝 I’m currently developing and maintaining for help with [AutoExpress](https://github.com/deepratna-awale/AutoExpress)
+- 🤝 I’m currently developing and maintaining [AutoExpress](https://github.com/deepratna-awale/AutoExpress)
 
 - 👨‍💻 All of my projects are available at [https://github.com/deepratna-awale](https://github.com/deepratna-awale)
 
