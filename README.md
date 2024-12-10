@@ -2,7 +2,11 @@
 <h1 align="center">Deepratna Awale</h1>
 <h2 align="center"> Gen AI/ ML Engineer</h2>
 
-<div align="center">![](https://quotes-github-readme.vercel.app/api?border=true&type=vertical&theme=latte&quote=If%20AI%20can%20make%20you%20a%2010x%20dev%2C%20you%20were%20a%200.1x%20dev%20to%20begin%20with.) </div>
+<div align="center">
+  
+  ![](https://quotes-github-readme.vercel.app/api?border=true&type=vertical&theme=latte&quote=If%20AI%20can%20make%20you%20a%2010x%20dev%2C%20you%20were%20a%200.1x%20dev%20to%20begin%20with.) 
+
+</div>
 
 # 💫 About Me:
 🔭 I’m currently working on [AutoExpress](https://github.com/deepratna-awale/AutoExpress)
