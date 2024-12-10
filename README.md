@@ -2,10 +2,7 @@
 <h1 align="center">Deepratna Awale</h1>
 <h2 align="center"> Gen AI/ ML Engineer</h2>
 
-![](https://komarev.com/ghpvc/?username=deepratna-awale&color=blue)
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=transparent)
-
----
 
 # 💫 About Me:
 🔭 I’m currently working on [AutoExpress](https://github.com/deepratna-awale/AutoExpress)
