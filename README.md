@@ -2,11 +2,8 @@
 <h1 align="center">Deepratna Awale</h1>
 <h2 align="center"> Gen AI/ ML Engineer</h2>
 
-[![](https://visitcount.itsvg.in/api?id=deepratna-awale&icon=0&color=0)](https://visitcount.itsvg.in)
-
----
-
-![](https://quotes-github-readme.vercel.app/api?type=vertical&theme=tokyonight)
+![](https://komarev.com/ghpvc/?username=your-github-username&color=blue)
+![](https://quotes-github-readme.vercel.app/api?type=vertical&theme=transparent)
 
 ---
 
