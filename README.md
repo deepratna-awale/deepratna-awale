@@ -2,8 +2,8 @@
 <h1 align="center">Deepratna Awale</h1>
 <h2 align="center"> Gen AI/ ML Engineer</h2>
 
-![](https://komarev.com/ghpvc/?username=your-github-username&color=blue)
-![](https://quotes-github-readme.vercel.app/api?type=vertical&theme=transparent)
+![](https://komarev.com/ghpvc/?username=deepratna-awale&color=blue)
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=transparent)
 
 ---
 
