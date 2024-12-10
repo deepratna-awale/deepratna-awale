@@ -4,7 +4,7 @@
 
 <div align="center">
   
-  ![](https://quotes-github-readme.vercel.app/api?border=true&type=horizontal&theme=latte) 
+  ![](https://quotes-github-readme.vercel.app/api?border=true&type=vertical&theme=latte) 
 
 </div>
 
