@@ -1,6 +1,10 @@
-
 <h1 align="center">Deepratna Awale</h1>
 <h2 align="center"> Gen AI/ ML Engineer</h2>
+
+[![Years Badge](https://badges.pufler.dev/years/deepratna-awale)](https://badges.pufler.dev)
+[![Visits Badge](https://badges.pufler.dev/visits/deepratna-awale/deepratna-awale)](https://badges.pufler.dev)
+[![Repos Badge](https://badges.pufler.dev/repos/deepratna-awale)](https://badges.pufler.dev)
+[![Commits Badge](https://badges.pufler.dev/commits/monthly/deepratna)](https://badges.pufler.dev)
 
 <div align="center">
   
