@@ -1,5 +1,7 @@
 ![Header](github-header-image.png)
+
 <div align="center">
+  
   [![Years Badge](https://badges.pufler.dev/years/deepratna-awale)](https://badges.pufler.dev)
   [![Repos Badge](https://badges.pufler.dev/repos/deepratna-awale)](https://badges.pufler.dev)
   [![Commits Badge](https://badges.pufler.dev/commits/monthly/deepratna-awale)](https://badges.pufler.dev)
@@ -7,8 +9,7 @@
 
 <div align="center">
   
-  ![](https://quotes-github-readme.vercel.app/api?border=true&type=vertical&theme=latte) 
-
+  ![Dev Quote](https://quotes-github-readme.vercel.app/api?border=true&type=vertical&theme=latte) 
 </div>
 
 # 💫 About Me:
