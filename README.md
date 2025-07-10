@@ -30,9 +30,10 @@
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=flat&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=flat&logo=github&logoColor=white)
 
 # 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=deepratna-awale&theme=transparent&hide_border=false&include_all_commits=true&count_private=true)
+![](https://github-readme-stats.vercel.app/api?username=deepratna-awale&theme=transparent&hide_border=false&include_all_commits=true&count_private=true)</br>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=deepratna-awale&theme=transparent&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=deepratna-awale&theme=transparent&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=deepratna-awale&theme=transparent&hide_border=false&include_all_commits=true&count_private=true&layout=donut&hide=jupyter%20notebook,html,makefile,css&size_weight=0.5&count_weight=0.5&exclude_repo=OpenOCRCorrectClone)
+
 
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=deepratna-awale&theme=onestar&no-frame=true&no-bg=false&margin-w=4)
