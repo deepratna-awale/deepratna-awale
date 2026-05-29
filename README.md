@@ -21,7 +21,6 @@
 
 🔭 I’m currently working on [AutoExpress](https://github.com/deepratna-awale/AutoExpress)</br>
 🤝 I’m looking for help with [EDA-Assist](https://github.com/deepratna-awale/EDA-Assist)</br>
-⚡ Get my resume [here](Resume_Awale_Deepratna.pdf)</br>
 🌱 I’m currently mastering AWS.</br>
 💬 Ask me about LLMs, Diffusion Models, and AGI.</br>
 
