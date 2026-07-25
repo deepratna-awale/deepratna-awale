@@ -16,13 +16,13 @@
 </div>
 
 
+# 📍 St. John's, Newfoundland - 🌡️ 17°C • Unknown • H:18°C • L:16°C • 23.4mm rain
 
 # 💫 About Me
 
-🔭 I’m currently working on [AutoExpress](https://github.com/deepratna-awale/AutoExpress)</br>
-🤝 I’m looking for help with [EDA-Assist](https://github.com/deepratna-awale/EDA-Assist)</br>
-🌱 I’m currently mastering AWS.</br>
+🌱 I’m currently mastering productionizing Agentic AI in AWS AgentCore.</br>
 💬 Ask me about LLMs, Diffusion Models, and AGI.</br>
+👓 Interested in contributing to open-source Agentic AI initiatives.
 
 
 # 🌐 Socials
