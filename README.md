@@ -21,7 +21,7 @@
 #### 📍 St. John's, Newfoundland 
 ---
 
-🌡️ 17°C • Unknown • H:18°C • L:16°C • 23.4mm rain
+🌡️ 17°C • H:18°C • L:16°C • 23.4mm rain
 
 ---
 
