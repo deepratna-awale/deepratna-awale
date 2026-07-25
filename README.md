@@ -84,7 +84,7 @@
 
 ## 🏆 GitHub Trophies
 
-![](https://github-profile-trophy.vercel.app/?username=deepratna-awale&theme=onestar&no-frame=true&no-bg=false&margin-w=4)
+![](https://trophygithubreadmelang.cybee.dpdns.org/?username=deepratna-awale&theme=onestar&no-frame=true&no-bg=false&margin-w=4)
 
 ## 📄 Research Papers
 
