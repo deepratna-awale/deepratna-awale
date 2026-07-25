@@ -59,7 +59,7 @@ def fetch_weather() -> str:
     description, emoji = WEATHER_CODES.get(code, ("Unknown", "🌡️"))
     precipitation_text = "No rain" if precipitation <= 0 else f"{precipitation}mm rain"
 
-    return f"{emoji} {temperature}°C • {description} • H:{high}°C • L:{low}°C • {precipitation_text}"
+    return f"{emoji} {temperature}°C • {description} • H:{high}°C • L:{low}°C • {precipitation_text}\n"
 
 
 def update_readme(weather_text: str) -> None:
