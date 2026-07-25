@@ -28,8 +28,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "deepratna-awale"
+          git config user.email "awale.deep@gmail.com"
           git fetch origin "$GITHUB_REF_NAME" || true
           git checkout -B "$GITHUB_REF_NAME"
           git pull --ff-only origin "$GITHUB_REF_NAME" || true
@@ -37,6 +37,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No README changes to commit."
           else
-            git commit -m "chore: update weather in README"
+            git commit -m "Project Green Field"
             git push origin HEAD:"$GITHUB_REF_NAME"
           fi
