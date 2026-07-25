@@ -66,11 +66,16 @@ def update_readme(weather_text: str) -> None:
     with open(README_PATH, "r", encoding="utf-8") as handle:
         content = handle.read()
 
-    if PLACEHOLDER in content:
+    section_pattern = re.compile(
+        r"(?ms)(#### 📍 St\. John's, Newfoundland\s*\n---\s*\n)(.*?)(\n---)"
+    )
+
+    if section_pattern.search(content):
+        updated = section_pattern.sub(rf"\1{weather_text}\3", content, count=1)
+    elif PLACEHOLDER in content:
         updated = content.replace(PLACEHOLDER, weather_text)
     else:
-        pattern = re.compile(r"(# 📍 )St\. John's, Newfoundland - .*")
-        updated = pattern.sub(rf"\1St. John's, Newfoundland - {weather_text}", content)
+        updated = content
 
     with open(README_PATH, "w", encoding="utf-8") as handle:
         handle.write(updated)

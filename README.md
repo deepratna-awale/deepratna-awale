@@ -15,8 +15,14 @@
   ![Dev Quote](https://quotes-github-readme.vercel.app/api?border=true&type=vertical&theme=latte) 
 </div>
 
+<br>
+<br>
 
-# 📍 St. John's, Newfoundland - 🌡️ 17°C • Unknown • H:18°C • L:16°C • 23.4mm rain
+#### 📍 St. John's, Newfoundland 
+---
+
+🌡️ 17°C • Unknown • H:18°C • L:16°C • 23.4mm rain
+---
 
 # 💫 About Me
 
