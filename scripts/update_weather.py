@@ -62,6 +62,36 @@ def fetch_weather() -> str:
     return f"{emoji} {temperature}°C • {description} • H:{high}°C • L:{low}°C • {precipitation_text}\n"
 
 
+def sanitize_weather_text(weather_text: str) -> str:
+    if not weather_text:
+        return ""
+
+    cleaned_text = weather_text.strip()
+    if not cleaned_text:
+        return ""
+
+    if "•" not in cleaned_text:
+        return weather_text.rstrip()
+
+    parts = [part.strip() for part in cleaned_text.split("•")]
+    filtered_parts: list[str] = []
+
+    for part in parts:
+        if not part:
+            continue
+        if re.search(r"\b(unknown|nan|none|null|n/a|na|unavailable)\b", part, flags=re.IGNORECASE):
+            continue
+        filtered_parts.append(part)
+
+    if not filtered_parts:
+        return ""
+
+    sanitized = " • ".join(filtered_parts)
+    if weather_text.endswith("\n"):
+        sanitized += "\n"
+    return sanitized
+
+
 def update_readme(weather_text: str) -> None:
     with open(README_PATH, "r", encoding="utf-8") as handle:
         content = handle.read()
@@ -82,6 +112,6 @@ def update_readme(weather_text: str) -> None:
 
 
 if __name__ == "__main__":
-    weather_text = fetch_weather()
+    weather_text = sanitize_weather_text(fetch_weather())
     update_readme(weather_text)
     print(f"Updated README with: {weather_text}")
