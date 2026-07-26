@@ -3,7 +3,9 @@ import json
 import os
 import re
 import urllib.request
+from datetime import datetime
 from typing import Any
+from zoneinfo import ZoneInfo
 
 README_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "README.md")
 PLACEHOLDER = "{insert_weather_here}"
@@ -92,6 +94,21 @@ def sanitize_weather_text(weather_text: str) -> str:
     return sanitized
 
 
+def format_last_updated(now: datetime | None = None) -> str:
+    current_time = now or datetime.now(ZoneInfo(TIMEZONE))
+    return current_time.strftime("Last Updated: %H:%M")
+
+
+def build_weather_section(weather_text: str, now: datetime | None = None) -> str:
+    weather_line = weather_text.strip()
+    timestamp_line = format_last_updated(now)
+
+    if weather_line:
+        return f"{weather_line}\n{timestamp_line}\n"
+
+    return f"{timestamp_line}\n"
+
+
 def update_readme(weather_text: str) -> None:
     with open(README_PATH, "r", encoding="utf-8") as handle:
         content = handle.read()
@@ -113,5 +130,6 @@ def update_readme(weather_text: str) -> None:
 
 if __name__ == "__main__":
     weather_text = sanitize_weather_text(fetch_weather())
-    update_readme(weather_text)
-    print(f"Updated README with: {weather_text}")
+    weather_section = build_weather_section(weather_text)
+    update_readme(weather_section)
+    print(f"Updated README with: {weather_section.strip()}")

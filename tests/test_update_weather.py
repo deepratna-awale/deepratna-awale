@@ -1,4 +1,5 @@
 import importlib.util
+from datetime import datetime
 from pathlib import Path
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts" / "update_weather.py"
@@ -20,3 +21,26 @@ def test_sanitize_weather_text_returns_empty_for_all_unknown_values() -> None:
     sanitized = MODULE.sanitize_weather_text(raw)
 
     assert sanitized == ""
+
+
+def test_format_last_updated_uses_hh_mm_format() -> None:
+    now = datetime(2026, 7, 26, 14, 5)
+
+    assert MODULE.format_last_updated(now) == "Last Updated: 14:05"
+
+
+def test_build_weather_section_includes_weather_and_timestamp() -> None:
+    now = datetime(2026, 7, 26, 9, 7)
+    weather = "☁️ 15°C • Overcast • H:17°C • L:13°C • No rain\n"
+
+    section = MODULE.build_weather_section(weather, now)
+
+    assert section == "☁️ 15°C • Overcast • H:17°C • L:13°C • No rain\nLast Updated: 09:07\n"
+
+
+def test_build_weather_section_keeps_timestamp_when_weather_empty() -> None:
+    now = datetime(2026, 7, 26, 6, 0)
+
+    section = MODULE.build_weather_section("", now)
+
+    assert section == "Last Updated: 06:00\n"
