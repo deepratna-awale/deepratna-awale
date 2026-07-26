@@ -35,7 +35,10 @@ def test_build_weather_section_includes_weather_and_timestamp() -> None:
 
     section = MODULE.build_weather_section(weather, now)
 
-    assert section == "☁️ 15°C • Overcast • H:17°C • L:13°C • No rain\nLast Updated: 09:07\n"
+    assert (
+        section
+        == "> 🌤️ Weather: ☁️ 15°C • Overcast • H:17°C • L:13°C • No rain\n> 🕒 Last Updated: 09:07\n"
+    )
 
 
 def test_build_weather_section_keeps_timestamp_when_weather_empty() -> None:
@@ -43,4 +46,4 @@ def test_build_weather_section_keeps_timestamp_when_weather_empty() -> None:
 
     section = MODULE.build_weather_section("", now)
 
-    assert section == "Last Updated: 06:00\n"
+    assert section == "> 🌤️ Weather: ⚠️ Weather unavailable\n> 🕒 Last Updated: 06:00\n"
