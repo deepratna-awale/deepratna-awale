@@ -28,6 +28,7 @@
 
 # 💫 About Me
 
+🏢 Over 3 years of Experience, currently a Sr. Software Engineer.
 🌱 I’m currently mastering productionizing Agentic AI in AWS AgentCore.</br>
 💬 Ask me about LLMs, Diffusion Models, and AGI.</br>
 👓 Interested in contributing to open-source Agentic AI initiatives.
@@ -37,7 +38,7 @@
 
 | **Connect with me** |
 |---------------------|
-| [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/https://discord.gg/xhe6TRbjVE) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/decently,_,dope) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/deepratna-awale) | 
+| [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/https://discord.gg/xhe6TRbjVE) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/_think_deepr) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/deepratna-awale) | 
 
 
 
