@@ -104,9 +104,9 @@ def build_weather_section(weather_text: str, now: datetime | None = None) -> str
     timestamp_line = format_last_updated(now)
 
     if weather_line:
-        return f"> 🌤️ Weather: {weather_line}\n> 🕒 {timestamp_line}\n"
+        return f"> 🌤️ Weather: {weather_line}\n\n> 🕒 {timestamp_line}\n"
 
-    return f"> 🌤️ Weather: ⚠️ Weather unavailable\n> 🕒 {timestamp_line}\n"
+    return f"> 🌤️ Weather: ⚠️ Weather unavailable\n\n> 🕒 {timestamp_line}\n"
 
 
 def update_readme(weather_text: str) -> None:

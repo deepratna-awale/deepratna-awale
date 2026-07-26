@@ -28,10 +28,10 @@
 
 # 💫 About Me
 
-🏢 Over 3 years of Experience, currently a Sr. Software Engineer.
+🏢 Over 3 years of Experience, currently a Sr. Software Engineer.</br>
 🌱 I’m currently mastering productionizing Agentic AI in AWS AgentCore.</br>
 💬 Ask me about LLMs, Diffusion Models, and AGI.</br>
-👓 Interested in contributing to open-source Agentic AI initiatives.
+👓 Interested in contributing to open-source Agentic AI initiatives.</br>
 
 
 # 🌐 Socials
