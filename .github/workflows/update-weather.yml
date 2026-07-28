@@ -37,6 +37,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No README changes to commit."
           else
-            git commit -m "Project Green Field"
+            git commit -m "Updated Weather in README"
             git push origin HEAD:"$GITHUB_REF_NAME"
           fi
