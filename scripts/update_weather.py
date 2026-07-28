@@ -96,7 +96,7 @@ def sanitize_weather_text(weather_text: str) -> str:
 
 def format_last_updated(now: datetime | None = None) -> str:
     current_time = now or datetime.now(ZoneInfo(TIMEZONE))
-    return current_time.strftime("Last Updated: %H:%M")
+    return current_time.strftime("Last Updated: %Y-%m-%d %H:%M")
 
 
 def build_weather_section(weather_text: str, now: datetime | None = None) -> str:

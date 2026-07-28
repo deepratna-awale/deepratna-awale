@@ -23,10 +23,10 @@ def test_sanitize_weather_text_returns_empty_for_all_unknown_values() -> None:
     assert sanitized == ""
 
 
-def test_format_last_updated_uses_hh_mm_format() -> None:
+def test_format_last_updated_includes_date_and_time() -> None:
     now = datetime(2026, 7, 26, 14, 5)
 
-    assert MODULE.format_last_updated(now) == "Last Updated: 14:05"
+    assert MODULE.format_last_updated(now) == "Last Updated: 2026-07-26 14:05"
 
 
 def test_build_weather_section_includes_weather_and_timestamp() -> None:
@@ -37,7 +37,7 @@ def test_build_weather_section_includes_weather_and_timestamp() -> None:
 
     assert (
         section
-        == "> 🌤️ Weather: ☁️ 15°C • Overcast • H:17°C • L:13°C • No rain\n> 🕒 Last Updated: 09:07\n"
+        == "> 🌤️ Weather: ☁️ 15°C • Overcast • H:17°C • L:13°C • No rain\n\n> 🕒 Last Updated: 2026-07-26 09:07\n"
     )
 
 
@@ -46,4 +46,4 @@ def test_build_weather_section_keeps_timestamp_when_weather_empty() -> None:
 
     section = MODULE.build_weather_section("", now)
 
-    assert section == "> 🌤️ Weather: ⚠️ Weather unavailable\n> 🕒 Last Updated: 06:00\n"
+    assert section == "> 🌤️ Weather: ⚠️ Weather unavailable\n\n> 🕒 Last Updated: 2026-07-26 06:00\n"
