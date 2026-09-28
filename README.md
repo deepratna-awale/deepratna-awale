@@ -29,10 +29,10 @@
 
 # 💫 About Me
 
-🏢 Over 3 years of Experience, currently a Sr. Software Engineer.</br>
-🌱 I’m currently mastering productionizing Agentic AI in AWS AgentCore.</br>
+🏢 Sr. Software Engineer @Nasdaq.</br>
+🌱 Productionizing SOTA AI Agents to catch Fraud and Money Laundering.</br>
 💬 Ask me about LLMs, Diffusion Models, and AGI.</br>
-👓 Interested in contributing to open-source Agentic AI initiatives.</br>
+👓 Actively Maintaining [Open Wallpaper Engine.](https://github.com/deepratna-awale/open-wallpaper-engine-mac)</br>
 
 
 # 🌐 Socials
