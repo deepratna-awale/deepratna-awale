@@ -67,7 +67,7 @@
 
 ## 🏆 GitHub Trophies
 
-![](https://trophygithubreadmelang.cybee.dpdns.org/?username=deepratna-awale&theme=darkhub&no-frame=true&no-bg=false&margin-w=4)
+![](https://trophygithubreadmelang.cybee.dpdns.org/?username=deepratna-awale&theme=darkhub&no-frame=true&no-bg=false&margin-w=4&title=-Reviews)
 
 ## 📄 Research Papers
 
