@@ -59,19 +59,19 @@ parts = []
 parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{NAME} - Gen AI / ML Engineer">')
 parts.append(f'''<defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#0b0b12"/><stop offset="1" stop-color="#05050a"/>
+    <stop offset="0" stop-color="#0d1117"/><stop offset="1" stop-color="#010409"/>
   </linearGradient>
   <radialGradient id="glowL" cx="0.18" cy="0.5" r="0.55">
-    <stop offset="0" stop-color="#7c3aed" stop-opacity="0.22"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    <stop offset="0" stop-color="#8957e5" stop-opacity="0.22"/><stop offset="1" stop-color="#8957e5" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="glowR" cx="0.92" cy="0.5" r="0.35">
-    <stop offset="0" stop-color="#22d3ee" stop-opacity="0.16"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    <stop offset="0" stop-color="#1f6feb" stop-opacity="0.16"/><stop offset="1" stop-color="#1f6feb" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#c084fc"/><stop offset="1" stop-color="#67e8f9"/>
+    <stop offset="0" stop-color="#bc8cff"/><stop offset="1" stop-color="#58a6ff"/>
   </linearGradient>
   <linearGradient id="term" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#2a2a33"/><stop offset="1" stop-color="#15151b"/>
+    <stop offset="0" stop-color="#21262d"/><stop offset="1" stop-color="#161b22"/>
   </linearGradient>
   <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="2.2"/>
@@ -101,11 +101,11 @@ for li, (lnodes, (ldur, lvals, lscale)) in enumerate(zip(layers, layer_cfg)):
                 ledges.append((a, b, d))
     parts.append(f'<g opacity="{lscale}">')
     parts.append(f'<animateTransform attributeName="transform" type="translate" values="{lvals}" keyTimes="0;0.25;0.5;0.75;1" calcMode="spline" keySplines="{SPLINE}" dur="{ldur}" repeatCount="indefinite"/>')
-    parts.append('<g stroke="#8b9bb8" stroke-width="0.7">')
+    parts.append('<g stroke="#8b949e" stroke-width="0.7">')
     for a, b, d in ledges:
         op = max(0.06, 0.34 * (1 - d / 175))
         parts.append(f'<line x1="{f(a["x"])}" y1="{f(a["y"])}" x2="{f(b["x"])}" y2="{f(b["y"])}" stroke-opacity="{op:.2f}"/>')
-    parts.append('</g><g fill="#dbe4ff">')
+    parts.append('</g><g fill="#c9d1d9">')
     for n in lnodes:
         parts.append(
             f'<circle cx="{f(n["x"])}" cy="{f(n["y"])}" r="{f(n["r"])}">'
@@ -118,7 +118,7 @@ for li, (lnodes, (ldur, lvals, lscale)) in enumerate(zip(layers, layer_cfg)):
             a, b = b, a
         dur = random.uniform(2.2, 4.0)
         begin = random.uniform(0, 8)
-        color = "#c084fc" if (k + li) % 2 else "#67e8f9"
+        color = "#bc8cff" if (k + li) % 2 else "#58a6ff"
         parts.append(
             f'<circle r="2.2" fill="{color}" filter="url(#soft)" opacity="0">'
             f'<animateMotion path="M{f(a["x"])} {f(a["y"])} L{f(b["x"])} {f(b["y"])}" dur="{f(dur)}s" begin="{f(begin)}s" repeatCount="indefinite"/>'
@@ -133,7 +133,7 @@ name_x, name_y = 28, 98
 parts.append('<g opacity="0">')
 parts.append('<animate attributeName="opacity" from="0" to="1" dur="1.1s" begin="0.2s" fill="freeze"/>')
 parts.append('<animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" dur="1.1s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/>')
-parts.append(f'<text x="{name_x}" y="{name_y}" font-family="{FONT}" font-size="40" font-weight="600" fill="#f5f5fa" letter-spacing="-0.5">{NAME}</text>')
+parts.append(f'<text x="{name_x}" y="{name_y}" font-family="{FONT}" font-size="40" font-weight="600" fill="#e6edf3" letter-spacing="-0.5">{NAME}</text>')
 # accent underline that draws itself
 parts.append(f'<rect x="{name_x}" y="{name_y + 10}" width="0" height="2" rx="1" fill="url(#accent)">'
              '<animate attributeName="width" from="0" to="120" dur="0.9s" begin="0.9s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"/></rect>')
@@ -148,7 +148,7 @@ CUR_GAP, CUR_W, CUR_H = 7, 11, 2.5
 slots = [TYPE_CH * len(r) + HOLD_T + ERASE_CH * len(r) + GAP_T for r in ROLES]
 cycle = sum(slots)
 
-parts.append(f'<g font-family="{FONT}" font-size="{role_fs}" fill="#c77dff" font-weight="500">')
+parts.append(f'<g font-family="{FONT}" font-size="{role_fs}" fill="#bc8cff" font-weight="500">')
 begin = 0.0
 for i, role in enumerate(ROLES):
     n = len(role)
@@ -159,7 +159,7 @@ for i, role in enumerate(ROLES):
     tl += [(t_hold_end + (n - k) * ERASE_CH, k) for k in range(n - 1, -1, -1)]
     t_erase_end = tl[-1][0]
     times = [t for t, _ in tl]
-    w_vals = [f(width * k / n) for _, k in tl]
+    w_vals = [f(width * k / n + (6 if k == n else 2)) for _, k in tl]
     x_vals = [f(role_x + width * k / n + CUR_GAP) for _, k in tl]
     kt = ";".join(f"{k:.5f}" for k in [0.0] + [t / cycle for t in times] + [1.0])
     wv = ";".join(["0"] + w_vals + ["0"])
@@ -176,7 +176,7 @@ for i, role in enumerate(ROLES):
     t_on = TYPE_CH * 0.5 / cycle
     t_off = (t_erase_end + ERASE_CH) / cycle
     parts.append(
-        f'<rect x="{f(role_x + CUR_GAP)}" y="{role_y + 1}" width="{CUR_W}" height="{CUR_H}" rx="1" fill="#67e8f9" opacity="0">'
+        f'<rect x="{f(role_x + CUR_GAP)}" y="{role_y + 1}" width="{CUR_W}" height="{CUR_H}" rx="1" fill="#58a6ff" opacity="0">'
         f'<animate attributeName="opacity" values="0;1;0;0" keyTimes="0;{t_on:.5f};{t_off:.5f};1" calcMode="discrete" '
         f'dur="{f(cycle)}s" begin="{f(begin)}s" repeatCount="indefinite"/>'
         f'<animate attributeName="x" values="{xv}" keyTimes="{kt}" calcMode="discrete" '
@@ -190,19 +190,20 @@ tx, ty, tw, th = 846, 58, 84, 84
 parts.append('<g filter="url(#shadow)">')
 parts.append(f'<animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>')
 parts.append(f'<g transform="rotate(-8 {tx + tw/2} {ty + th/2})">')
-parts.append(f'<rect x="{tx}" y="{ty}" width="{tw}" height="{th}" rx="18" fill="url(#term)" stroke="#3a3a46" stroke-width="1"/>')
+parts.append(f'<rect x="{tx}" y="{ty}" width="{tw}" height="{th}" rx="18" fill="url(#term)" stroke="#30363d" stroke-width="1"/>')
 parts.append(f'<rect x="{tx}" y="{ty}" width="{tw}" height="{th}" rx="18" fill="none" stroke="url(#accent)" stroke-width="1.2" opacity="0.35">'
              '<animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.5s" repeatCount="indefinite"/></rect>')
 for k, c in enumerate(("#ff5f57", "#febc2e", "#28c840")):
     parts.append(f'<circle cx="{tx + 16 + k * 10}" cy="{ty + 16}" r="3" fill="{c}"/>')
 # prompt chevron and underscore cursor
 px, py = tx + 20, ty + 56
-parts.append(f'<path d="M{px} {py - 18} l12 9 l-12 9" fill="none" stroke="#f5f5fa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>')
-parts.append(f'<rect x="{px + 20}" y="{py - 3}" width="18" height="4" rx="2" fill="#67e8f9">'
+parts.append(f'<path d="M{px} {py - 18} l12 9 l-12 9" fill="none" stroke="#e6edf3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>')
+parts.append(f'<rect x="{px + 20}" y="{py - 3}" width="18" height="4" rx="2" fill="#58a6ff">'
              '<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/></rect>')
 parts.append('</g></g>')
 
 parts.append('</g>')  # frame clip
+parts.append(f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="18" fill="none" stroke="#30363d"/>')
 parts.append('</svg>')
 
 svg = "\n".join(parts)
