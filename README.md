@@ -74,7 +74,7 @@
 
 | **Developer Experience** |
 |--------------------------|
-| ![macOS](https://img.shields.io/badge/mac%20os-000000?style=flat&logo=apple&logoColor=white) ![VS Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=flat&logo=visual%20studio%20code&logoColor=white) ![VIM](https://img.shields.io/badge/VIM-%2311AB00.svg?&style=flat&logo=vim&logoColor=white) ![iTerm](https://img.shields.io/badge/iTerm2-000000?style=flat&logo=iterm2&logoColor=white) |
+| ![macOS](https://img.shields.io/badge/mac%20os-000000?style=flat&logo=apple&logoColor=white) ![VS Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=flat&logo=visual%20studio%20code&logoColor=white) ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=flat&logo=intellijidea&logoColor=white) ![VIM](https://img.shields.io/badge/VIM-%2311AB00.svg?&style=flat&logo=vim&logoColor=white) ![iTerm](https://img.shields.io/badge/iTerm2-000000?style=flat&logo=iterm2&logoColor=white) |
 
 
 
