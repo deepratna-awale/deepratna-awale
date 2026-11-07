@@ -14,9 +14,7 @@ ROLES = [
     "Gen AI / ML Engineer",
     "Sr. Software Engineer @ Nasdaq",
     "Building Agents to catch Fraud & Money Laundering",
-    "Maintainer of Open Wallpaper Engine",
-    "Maintainer of AutoExpress",
-    "Maintainer of SD Parsers",
+    "Maintainer of Open Wallpaper Engine, AutoExpress & SD Parsers",
 ]
 FONT = "'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif"
 SPLINE = "0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1"
