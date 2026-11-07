@@ -143,7 +143,7 @@ parts.append('</g>')
 # One discrete (stepped) timeline per role covering the whole cycle:
 # type char-by-char -> hold -> backspace char-by-char -> hidden until the cycle wraps.
 role_x, role_y, role_fs = 28, 138, 18
-TYPE_CH, ERASE_CH, HOLD_T, GAP_T = 0.045, 0.045, 3.2, 0.6
+TYPE_CH, ERASE_CH, HOLD_T, GAP_T = 0.03, 0.03, 3.2, 0.6
 CUR_GAP, CUR_W, CUR_H = 7, 11, 2.5
 slots = [TYPE_CH * len(r) + HOLD_T + ERASE_CH * len(r) + GAP_T for r in ROLES]
 cycle = sum(slots)
