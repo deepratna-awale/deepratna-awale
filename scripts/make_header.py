@@ -142,43 +142,47 @@ parts.append(f'<rect x="{name_x}" y="{name_y + 10}" width="0" height="2" rx="1" 
 parts.append('</g>')
 
 # --- typed roles ---------------------------------------------------------------
+# One discrete (stepped) timeline per role covering the whole cycle:
+# type char-by-char -> hold -> backspace char-by-char -> hidden until the cycle wraps.
 role_x, role_y, role_fs = 28, 138, 18
-per_char, hold_t, erase_t, gap_t = 0.11, 3.2, 0.7, 0.6
+TYPE_CH, ERASE_CH, HOLD_T, GAP_T = 0.11, 0.045, 3.2, 0.6
 CUR_GAP, CUR_W, CUR_H = 7, 11, 2.5
-slots = [per_char * len(r) + hold_t + erase_t + gap_t for r in ROLES]
+slots = [TYPE_CH * len(r) + HOLD_T + ERASE_CH * len(r) + GAP_T for r in ROLES]
 cycle = sum(slots)
+
 parts.append(f'<g font-family="{FONT}" font-size="{role_fs}" fill="#c77dff" font-weight="500">')
 begin = 0.0
 for i, role in enumerate(ROLES):
     n = len(role)
     width = round(role_fs * 0.53 * n)
-    type_t = per_char * n
-    steps = n + 1
-    tw_vals = ";".join(f(width * k / n) for k in range(steps))
-    tw_keys = ";".join(f"{k / n:.4f}" for k in range(steps))
-    t_type = type_t / cycle
-    t_hold = (type_t + hold_t) / cycle
-    t_erase = (type_t + hold_t + erase_t) / cycle
+    # timeline: (time, chars visible)
+    tl = [(k * TYPE_CH, k) for k in range(1, n + 1)]
+    t_hold_end = n * TYPE_CH + HOLD_T
+    tl += [(t_hold_end + (n - k) * ERASE_CH, k) for k in range(n - 1, -1, -1)]
+    t_erase_end = tl[-1][0]
+    times = [t for t, _ in tl]
+    w_vals = [f(width * k / n) for _, k in tl]
+    x_vals = [f(role_x + width * k / n + CUR_GAP) for _, k in tl]
+    kt = ";".join(f"{k:.5f}" for k in [0.0] + [t / cycle for t in times] + [1.0])
+    wv = ";".join(["0"] + w_vals + ["0"])
+    xv = ";".join([f(role_x + CUR_GAP)] + x_vals + [f(role_x + CUR_GAP)])
     parts.append(f'<clipPath id="clip{i}">')
     parts.append(
         f'<rect x="{role_x - 2}" y="{role_y - role_fs}" width="0" height="{role_fs + 8}">'
-        f'<animate attributeName="width" values="{tw_vals}" keyTimes="{tw_keys}" calcMode="discrete" '
-        f'dur="{f(type_t)}s" begin="{f(begin)}s;{f(begin)}s+{f(cycle)}s" repeatCount="1" fill="freeze"/>'
-        f'<animate attributeName="width" values="{width};{width};{width};0;0" keyTimes="0;{t_type:.4f};{t_hold:.4f};{t_erase:.4f};1" '
-        f'calcMode="spline" keySplines="0 0 1 1;0 0 1 1;0.4 0 1 1;0 0 1 1" dur="{f(cycle)}s" begin="{f(begin)}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="width" values="{wv}" keyTimes="{kt}" calcMode="discrete" '
+        f'dur="{f(cycle)}s" begin="{f(begin)}s" repeatCount="indefinite"/>'
         '</rect>')
     parts.append('</clipPath>')
     parts.append(f'<text x="{role_x}" y="{role_y}" textLength="{width}" lengthAdjust="spacing" clip-path="url(#clip{i})">{html.escape(role)}</text>')
-    # underscore cursor that follows the typing head
-    cur_x_vals = ";".join(f(role_x + width * k / n + CUR_GAP) for k in range(steps))
-    x_end, x_start = f(role_x + width + CUR_GAP), f(role_x + CUR_GAP)
+    # underscore cursor: visible from first keystroke until the last backspace, follows the head
+    t_on = TYPE_CH * 0.5 / cycle
+    t_off = (t_erase_end + ERASE_CH) / cycle
     parts.append(
-        f'<rect x="{x_start}" y="{role_y + 1}" width="{CUR_W}" height="{CUR_H}" rx="1" fill="#67e8f9" opacity="0">'
-        f'<animate attributeName="opacity" values="0;1;1;1;1;0;0" keyTimes="0;0.001;{t_type:.4f};{t_hold:.4f};{t_erase:.4f};{t_erase + 0.001:.4f};1" '
-        f'calcMode="discrete" dur="{f(cycle)}s" begin="{f(begin)}s" repeatCount="indefinite"/>'
-        f'<animate attributeName="x" values="{cur_x_vals}" keyTimes="{tw_keys}" calcMode="discrete" dur="{f(type_t)}s" begin="{f(begin)}s;{f(begin)}s+{f(cycle)}s" repeatCount="1" fill="freeze"/>'
-        f'<animate attributeName="x" values="{x_end};{x_end};{x_end};{x_start};{x_start}" '
-        f'keyTimes="0;{t_type:.4f};{t_hold:.4f};{t_erase:.4f};1" calcMode="spline" keySplines="0 0 1 1;0 0 1 1;0.4 0 1 1;0 0 1 1" dur="{f(cycle)}s" begin="{f(begin)}s" repeatCount="indefinite"/>'
+        f'<rect x="{f(role_x + CUR_GAP)}" y="{role_y + 1}" width="{CUR_W}" height="{CUR_H}" rx="1" fill="#67e8f9" opacity="0">'
+        f'<animate attributeName="opacity" values="0;1;0;0" keyTimes="0;{t_on:.5f};{t_off:.5f};1" calcMode="discrete" '
+        f'dur="{f(cycle)}s" begin="{f(begin)}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="x" values="{xv}" keyTimes="{kt}" calcMode="discrete" '
+        f'dur="{f(cycle)}s" begin="{f(begin)}s" repeatCount="indefinite"/>'
         '</rect>')
     begin += slots[i]
 parts.append('</g>')
