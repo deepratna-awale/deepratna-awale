@@ -21,9 +21,9 @@
 #### 📍 St. John's, Newfoundland 
 ---
 
-> 🌤️ Weather: 🌤️ 6°C • Mainly clear • H:6°C • L:3°C • 0.1mm rain
+> 🌤️ Weather: ☁️ 5°C • Overcast • H:7°C • L:2°C • 12.1mm rain
 
-> 🕒 Last Updated: 2026-11-12 11:20
+> 🕒 Last Updated: 2026-11-13 10:42
 
 ---
 
