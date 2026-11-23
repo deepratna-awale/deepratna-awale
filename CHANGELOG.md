@@ -14,3 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Updated the README header to include a live weather line for St. John's, Newfoundland.
+
+### Fixed
+- Weather update retries the Open-Meteo request (5 attempts, 15s each) instead of giving up after one 20s timeout.
+- A failed weather fetch now keeps the last good weather in the README and fails the run, instead of writing "Weather unavailable".
