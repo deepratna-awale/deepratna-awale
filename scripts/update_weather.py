@@ -2,6 +2,8 @@
 import json
 import os
 import re
+import sys
+import time
 import urllib.request
 from datetime import datetime
 from typing import Any
@@ -37,26 +39,41 @@ WEATHER_CODES = {
 }
 
 
-def fetch_weather() -> str:
-    url = (
-        "https://api.open-meteo.com/v1/forecast?"
-        f"latitude={LATITUDE}&longitude={LONGITUDE}&current=temperature_2m,weather_code&"
-        f"daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone={TIMEZONE}&forecast_days=1"
-    )
+WEATHER_URL = (
+    "https://api.open-meteo.com/v1/forecast?"
+    f"latitude={LATITUDE}&longitude={LONGITUDE}&current=temperature_2m,weather_code&"
+    f"daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone={TIMEZONE}&forecast_days=1"
+)
+# The Open-Meteo request occasionally hangs from GitHub-hosted runners, so use a
+# short per-attempt timeout and retry instead of one long attempt.
+ATTEMPTS = 5
+ATTEMPT_TIMEOUT_SECONDS = 15
+RETRY_DELAYS_SECONDS = (5, 15, 30, 60)
 
-    try:
-        with urllib.request.urlopen(url, timeout=20) as response:
-            payload: dict[str, Any] = json.load(response)
-    except Exception:
-        return "⚠️ Weather unavailable"
 
-    current = payload.get("current", {})
-    daily = payload.get("daily", {})
-    code = current.get("weather_code", 0)
-    temperature = round(float(current.get("temperature_2m", 0)))
-    high = round(float(daily.get("temperature_2m_max", [0])[0]))
-    low = round(float(daily.get("temperature_2m_min", [0])[0]))
-    precipitation = round(float(daily.get("precipitation_sum", [0])[0]), 1)
+def request_payload() -> dict[str, Any]:
+    last_error: Exception | None = None
+    for attempt in range(1, ATTEMPTS + 1):
+        try:
+            request = urllib.request.Request(WEATHER_URL, headers={"User-Agent": "readme-weather-updater"})
+            with urllib.request.urlopen(request, timeout=ATTEMPT_TIMEOUT_SECONDS) as response:
+                return json.load(response)
+        except Exception as error:  # noqa: BLE001 - log and retry any network/parse error
+            last_error = error
+            print(f"Attempt {attempt}/{ATTEMPTS} failed: {error!r}", file=sys.stderr)
+            if attempt < ATTEMPTS:
+                time.sleep(RETRY_DELAYS_SECONDS[min(attempt - 1, len(RETRY_DELAYS_SECONDS) - 1)])
+    raise RuntimeError(f"Open-Meteo request failed after {ATTEMPTS} attempts") from last_error
+
+
+def format_weather(payload: dict[str, Any]) -> str:
+    current = payload["current"]
+    daily = payload["daily"]
+    code = int(current["weather_code"])
+    temperature = round(float(current["temperature_2m"]))
+    high = round(float(daily["temperature_2m_max"][0]))
+    low = round(float(daily["temperature_2m_min"][0]))
+    precipitation = round(float(daily["precipitation_sum"][0] or 0), 1)
 
     description, emoji = WEATHER_CODES.get(code, ("Unknown", "🌡️"))
     precipitation_text = "No rain" if precipitation <= 0 else f"{precipitation}mm rain"
@@ -128,8 +145,24 @@ def update_readme(weather_text: str) -> None:
         handle.write(updated)
 
 
-if __name__ == "__main__":
-    weather_text = sanitize_weather_text(fetch_weather())
+def main() -> int:
+    try:
+        weather_text = sanitize_weather_text(format_weather(request_payload()))
+    except Exception as error:  # noqa: BLE001
+        # Keep the last good weather in the README instead of overwriting it
+        # with "Weather unavailable", and fail the run so the problem is visible.
+        print(f"::error::Weather fetch failed, README left unchanged: {error!r}")
+        return 1
+
+    if not weather_text:
+        print("::error::Weather response had no usable fields, README left unchanged")
+        return 1
+
     weather_section = build_weather_section(weather_text)
     update_readme(weather_section)
     print(f"Updated README with: {weather_section.strip()}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
